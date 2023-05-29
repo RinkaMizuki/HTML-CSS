@@ -1,0 +1,54 @@
+.message-main{
+    margin-top: 20px;
+    display: flex;
+    text-align: center;
+
+    justify-content: space-evenly;
+}
+.message-1{
+    flex-basis: 30%;
+
+    background-color: violet;
+}
+.message-2{
+    margin-left :10px;
+    flex-basis: 30%;
+    margin-right: 10px;
+ 
+    background-color: aqua;
+}
+.message-3{
+    flex-basis: 30%;
+
+    background-color: brown;
+}
+.heading{
+    margin: 0;
+    background-color:orangered;
+    min-height: 42px;
+    justify-content: space-between;
+    display: flex;
+}
+.nav-list{
+    padding-left: 0;
+    margin: auto 16px;
+}
+.nav-item{
+    display: inline;
+    margin:0 8px;
+    color:#fff;
+}
+.form-group{
+    margin: 50px 200px;
+    padding: 40px;
+}
+.form-group-1{
+    display: flex;
+    padding: 8px 0;
+}
+.form-label{
+    min-width:99.53px;                                                                                                  
+}
+.form-input{
+    flex:1;
+}

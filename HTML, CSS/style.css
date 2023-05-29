@@ -1,0 +1,104 @@
+/*CSS pseudo classes*/
+:root{
+    --my-color: red;
+}
+
+h2{
+    /*h2 mặc định là thẻ block*/
+    display: inline;
+    color: var(--my-color);
+    /* background-color: aquamarine; */
+}
+h2:hover{
+    color: yellowgreen;
+    background:red;
+    font-size: 100px;
+}
+.box-active{
+    width: 100px;
+    height: 100px;
+    background-color: blueviolet;
+    border: 16px dashed red;
+    padding: 10px;
+}
+.box-active:active{
+    background-color: black;
+}
+.first-child p:first-child{
+    color:burlywood;
+    background:red;
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.box{
+    width: 60px;
+    height: 60px;
+    color: white;
+    text-align: center;
+}
+.box-margin1{
+
+    background-color: black;
+}
+.box-margin2{
+    background-color:red;
+}
+.box-margin3{
+    /* margin: 10px; */
+    padding: 10px;
+    background-color:green;
+}
+.box-sizing{
+    width: 200px;
+    height: 200px;
+    /* /* padding: 40px; */
+    box-sizing: border-box;
+    /* border: 20px dashed black; */
+    /* background-color: teal; */
+    /* background-clip: content-box;thuoc tinh cua background-color mặc định là border-box */
+    /* color: white; */ 
+    background: border-box red;
+}
+.background-image{
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    border: 20px dashed #333;
+    background-image: url(images/waifu.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    background-origin: border-box;
+    background-position: center;/*khi chỉ sử dụng giá trị tưong đối or tuyệt đối thì nó sẽ căng theo trục x,y này góc trên cùng bên trái trình duyệt*/
+}
+.box-7{
+    width: 300px;
+    height: 200px;
+    position: relative;/* phụ thuộc vào chính mình lấy vị trí ban dầu làm gốc */
+    background-color: red;
+}
+.box-6{
+    width: 200px;
+    height: 150px;
+    position: absolute;
+    background-color:black;
+    bottom: 0;
+    right: 0;
+}
+.box-5{
+    width: 100px;
+    height: 100px;
+    position: absolute;/* phụ thuộc vào thẻ cha gần nhất có chứa thuộc tính position*/
+    background-color: green;
+    bottom: 0;
+    right: 0;
+}
+.box-8{
+    height:50px;
+    background-color: yellowgreen;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+

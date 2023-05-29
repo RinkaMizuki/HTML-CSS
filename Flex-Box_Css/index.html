@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Flex-box</title>
+    <style>
+        *{
+            margin:0;
+        }
+        html{
+            background-color: burlywood;
+        }
+        .layout-flex{
+            display: flex;
+            justify-content: space-evenly;
+
+            flex-direction:column;
+        }
+        .feature-flex{
+            flex-basis: 30%;
+            padding: 12px;
+            box-sizing: border-box;
+            margin: 30px 0 30px;
+        }
+        /*PC*/
+        @media (min-width:740px) {
+            .layout-flex{
+                flex-direction: row;
+            }
+        }
+        .feature-flex:first-child{
+            background-color: aqua;
+            order: 2;
+        }
+        .feature-flex:nth-child(2){
+            background-color: wheat;
+            order: 3;
+        }
+        .feature-flex:nth-child(3){
+            order: 1;
+            background-color:aquamarine;
+        }
+        .message-flex{
+            background-color: #fff;
+            padding: 30px;
+            display: flex;
+        }
+        .message p{
+            margin: 20px 0 20px;
+        }
+        .message:first-child{
+            flex:1;
+        }
+        .message:nth-child(2){
+            flex:3;
+            margin: 0 20px 0 20px;
+        }
+        .message:last-child{
+            flex:1;
+        }
+        .wrap-layout{
+            padding: 15px 0px 15px;
+            background-color: #fff;
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap-reverse;
+        }
+        .wrap-layout-item{
+            height: 80px;
+            width: 150px;
+            text-align: center;
+            padding-top: 20px;
+            margin: 20px 0 20px;
+            font-size: 50px;
+            color:#fff;
+            background-color: red;
+        }
+        .box-flex{
+            width: 50vw;
+            height: 70vh;
+            color: #fff;
+            margin: 50px 0 50px;
+            background-color: darkcyan;
+            position: relative;
+            left: 25%;
+            display: flex;
+        }
+        .box-center{
+            font-size: 50px;
+            margin: auto;
+            text-align: center;
+            
+        }
+        .chart-layout-flex{
+            background-color: #fff;
+            height: 320px;
+            display: flex;
+            justify-content: space-around;
+            padding: 16px;
+            margin: 26px;
+            align-items: flex-end;
+        }
+        .chart-layout-item{
+            background-color: red;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            width: 60px;
+            color: #fff;
+            text-align: center;
+            height: var(--percent);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: growth ease-out 1s;
+        }
+        @keyframes growth{
+            from{
+                opacity: 0;
+                height: calc(var(--percent) - var(--percent));    
+            }
+            to{
+                opacity: 1; 
+                height: var(--percent);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="heading">
+        <ul class="nav-list">
+            <li class="nav-item">Giới thiệu</li>
+            <li class="nav-item">Kết nối</li>
+            <li class="nav-item">Tải ứng dụng</li>
+        </ul>
+
+        <ul class="nav-list">
+            <li class="nav-item">Đăng kí</li>
+            <li class="nav-item">Đăng nhập</li>
+        </ul>
+    </div>
+
+    <div class="form-group" style="background-color: #fff;">
+        <form action="" method="get" class="form">
+            <div class="form-group-1">
+                <label class="form-label" for="username">Tên đăng nhập:</label>
+                <input class="form-input" type="text" id="username" name="username">
+            </div>
+            <br>
+            <div class="form-group-1">
+                <label class="form-label" for="password">Mật khẩu:</label>
+                <input class="form-input" type="password" name="password" id="password">
+            </div>
+        </form>
+    </div>
+    
+    <div class="message-flex">
+        <div class="message">
+            <h2>Sidebar one</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum, quia voluptas exercitationem alias illo modi asperiores architecto deleniti ad laudantium nostrum quis, accusamus voluptatum, in necessitatibus porro hic et veniam!</p>
+        </div>
+
+        <div class="message">
+            <h2>Main Column</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus laborum ex, optio magni corporis possimus sunt fugiat tempore natus quis, aliquam error quia dolorum ullam commodi dolore! Praesentium, voluptas architecto?Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus laborum ex, optio magni corporis possimus sunt fugiat tempore natus quis, aliquam error quia dolorum ullam commodi dolore! Praesentium, voluptas architecto?Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus laborum ex, optio magni corporis possimus sunt fugiat tempore natus quis, aliquam error quia dolorum ullam commodi dolore! Praesentium, voluptas architecto?</p>
+        </div>
+        
+        <div class="message">
+            <h2>Sidebar two</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi aspernatur assumenda esse inventore quo, sequi quisquam incidunt blanditiis molestiae numquam odio animi, facilis dolorem dolores laborum enim maxime nobis minima.</p>
+        </div>
+    </div>
+
+        <div class="layout-flex">
+            <div class="feature-flex">
+                <h2>Feature1</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum repellat sed, similique praesentium obcaecati hic officia neque natus ut illo architecto fugiat blanditiis consectetur aspernatur ipsam cum totam maxime repellendus!</p>
+            </div>
+
+            <div class="feature-flex">
+                <h2>Feature2</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores commodi eaque saepe voluptate distinctio quisquam, ab, architecto eligendi odit vitae minus quam iste aut nesciunt, sunt aperiam impedit sed eveniet!</p>
+            </div>
+
+            <div class="feature-flex">
+                <h2>Feature3</h2>   
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci nemo accusantium ipsa nisi doloremque sunt saepe enim. Nam, adipisci, quis, quibusdam aspernatur ut officiis a id tenetur corrupti architecto blanditiis.</p>
+            </div>
+        </div>
+
+        <div class="wrap-layout">
+            <div class="wrap-layout-item">1</div>
+            <div class="wrap-layout-item">2</div>
+            <div class="wrap-layout-item">3</div>
+            <div class="wrap-layout-item">4</div>
+            <div class="wrap-layout-item">5</div>
+        </div>
+
+        <div class="box-flex">
+            <div class="box-center">Center item</div>
+        </div>
+
+        <div class="chart-layout-flex">
+            <div class="chart-layout-item" style="--percent: 10%">10%</div>
+            <div class="chart-layout-item" style="--percent: 30%">30%</div>
+            <div class="chart-layout-item" style="--percent: 50%">50%</div>
+            <div class="chart-layout-item" style="--percent: 25%">25%</div>
+            <div class="chart-layout-item" style="--percent: 80%">80%</div>
+            <div class="chart-layout-item" style="--percent: 40%">40%</div>
+            <div class="chart-layout-item" style="--percent: 90%">90%</div>
+            <div class="chart-layout-item" style="--percent: 100%">100%</div>
+        </div>
+</body>
+</html>
